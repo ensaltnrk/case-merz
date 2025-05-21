@@ -22,7 +22,7 @@ minikube version: v1.35.0
 commit: dd5d320e41b5451cdf3c01891bc4e13d189586ed-dirty
 ```
 
-![minikube-start](image-1.png)
+![minikube-start](images/image-1.png)
 
 ### Application Deployment
 - Created namespace and deployed java-demo-app.
@@ -43,7 +43,7 @@ kubectl logs -f demo-java-app-78d4596c99-hnxvg -n merzigo
 kubectl apply -f service.yaml -n merzigo
 ```
 
-![deploy](image.png)
+![deploy](images/image.png)
 
 
 ### Self-Signed Certificate Generation
@@ -60,7 +60,7 @@ openssl req -x509 -newkey rsa:4096 -sha256 -days 365 \
 
 ### Ingress and TLS Configuration
 
-![Create Tls Secret](image-2.png)
+![Create Tls Secret](images/image-2.png)
 
 - Create TLS secret
 
@@ -77,7 +77,7 @@ kubectl create secret tls java-demo-tls \
 127.0.0.1 local.java-demo.com
 ```
 
-![/etc/hosts](image-5.png)
+![/etc/hosts](images/image-5.png)
 
 - Install Ingress-Nginx controller
 
@@ -96,7 +96,7 @@ ingress-nginx-controller-85f84bf86c-nvrsj   1/1     Running     0          151m
 kubectl apply -f ingress.yaml -n merzigo
 kubectl get ingress -n merzigo
 ```
-![Ingress](image-7.png)
+![Ingress](images/image-7.png)
 
 ### HPA and Metrics Server
 
@@ -115,11 +115,11 @@ demo-java-app-hpa   Deployment/demo-java-app   cpu: <unknown>/60%, memory: <unkn
 minikube addons list
 minikube addons enable metrics-server
 ```
-![Minikube Addons List](image-4.png)
+![Minikube Addons List](images/image-4.png)
 
 - All services and resources running
 
-![All Services on Minikube](image-6.png)
+![All Services on Minikube](images/image-6.png)
 
 - Check node details
 
@@ -153,7 +153,7 @@ Password:
 
 - Testing Application in Browser
 
-![Test Url from Browser](image-3.png)
+![Test Url from Browser](images/image-3.png)
 
 
 ### Presentation
