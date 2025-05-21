@@ -167,11 +167,11 @@ Password:
 - **Testing & Validation:** Verified access to `https://local.java-demo.com` browser after setting up `/etc/hosts` and running `minikube tunnel`.
 
 - **Challenges:**
-- I used the image `ghcr.io/benc-uk/java-demoapp:latest` from the [java-demo-app](https://github.com/benc-uk/java-demoapp) repository.
-- Liveness/Readiness probes triggered too early, causing the pod to restart before the app was ready.  
-  Fixed by increasing initialDelaySeconds from 5 to 15 and rediness from 15 to 30 seconds.
+  - I used the image `ghcr.io/benc-uk/java-demoapp:latest` from the [java-demo-app](https://github.com/benc-uk/java-demoapp) repository.
+  - Liveness/Readiness probes triggered too early, causing the pod to restart before the app was ready.  
+    Fixed by increasing initialDelaySeconds from 5 to 15 and rediness from 15 to 30 seconds.
 
-- HPA metrics showed as "unknown" initially — resolved by enabling the metrics-server. 
+  - HPA metrics showed as "unknown" initially — resolved by enabling the metrics-server. 
 
-- /etc/hosts was initially pointing to the Minikube IP `192.168.49.2`, but Ingress with `minikube tunnel` listens on `127.0.0.1`.  
-  Fixed by updating entry to `127.0.0.1 local.java-demo.com`.
+  - /etc/hosts was initially pointing to the Minikube IP `192.168.49.2`, but Ingress with `minikube tunnel` listens on `127.0.0.1`.  
+    Fixed by updating entry to `127.0.0.1 local.java-demo.com`.
