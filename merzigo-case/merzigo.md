@@ -167,6 +167,7 @@ Password:
 - **Testing & Validation:** Verified access to `https://local.java-demo.com` browser after setting up `/etc/hosts` and running `minikube tunnel`.
 
 - **Challenges:**
+- I used the image `ghcr.io/benc-uk/java-demoapp:latest` from the [java-demo-app](https://github.com/benc-uk/java-demoapp) repository.
 - Liveness/Readiness probes triggered too early, causing the pod to restart before the app was ready.  
   Fixed by increasing initialDelaySeconds from 5 to 15 and rediness from 15 to 30 seconds.
 
