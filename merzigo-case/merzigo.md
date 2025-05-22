@@ -49,7 +49,7 @@ kubectl apply -f service.yaml -n merzigo
 ### Self-Signed Certificate Generation
 
 - Create self-signed certificate
-[Self-signed Certificate](https://stackoverflow.com/questions/10175812/how-can-i-generate-a-self-signed-ssl-certificate-using-openssl)
+[Self-signed Certificate](https://linuxize.com/post/creating-a-self-signed-ssl-certificate/)
 
 ```bash
 openssl req -x509 -newkey rsa:4096 -sha256 -days 365 \
@@ -175,3 +175,5 @@ Password:
 
   - /etc/hosts was initially pointing to the Minikube IP `192.168.49.2`, but Ingress with `minikube tunnel` listens on `127.0.0.1`.  
     Fixed by updating entry to `127.0.0.1 local.java-demo.com`.
+
+- **The Case Repository** -> https://github.com/ensaltnrk/case-merz
